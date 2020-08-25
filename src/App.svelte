@@ -65,6 +65,7 @@
 
 <main>
 	<Header bind:isSideNavOpen platformName="PMGR">
+		<!-- Only display Header links if the window is large enough-->
 		{#if winWidth >= 1056}
 		<HeaderNav>
 			<HeaderNavItem text="Accounts" />
@@ -74,6 +75,7 @@
 		{/if}
 	</Header>
 	<SideNav fixed bind:isOpen={isSideNavOpen}>
+		<!-- If the windows is small, push Nav links into SideNav-->
 		{#if winWidth < 1056}
 		<SideNavItems>
 			<SideNavLink icon={iAccounts} text="Accounts" />
