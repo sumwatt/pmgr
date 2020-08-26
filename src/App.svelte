@@ -1,6 +1,8 @@
 <script>
-  import HNav from "./HNav.svelte";
-  import HSideNav from "./HSideNav.svelte";
+  import HNav from "./Layout/HNav.svelte";
+  import HSideNav from "./Layout/HSideNav.svelte";
+  import ContentLayout from "./Layout/ContentLayout.svelte"; 
+import { Content } from "carbon-components-svelte";
   /**
    * 
    * 
@@ -18,7 +20,7 @@
    * 
    * 
    */
-  let activeComponent = undefined;
+  let activeComponent = "Accounts";
 </script>
 <svelte:head>
   <link
@@ -32,6 +34,7 @@
 <main>
   <HNav winWidth={winWidth} bind:isSideNavOpen />
   <HSideNav bind:isSideNavOpen winWidth={winWidth} activeComponent={activeComponent}/>
+  <ContentLayout {activeComponent}>
 </main>
 
 <style>
